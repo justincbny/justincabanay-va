@@ -75,6 +75,28 @@ const SAMPLES = [
     tools: ["Notion", "Loom", "Google Workspace"],
     result:
       "One daily brief that reads in four minutes. Status pings fell roughly 80%, and 14 core processes now live in a searchable, versioned SOP library."
+  },
+  {
+    title: "500-Lead B2B Decision-Maker Database & Email Verification",
+    category: "Lead Generation",
+    key: "leads",
+    file: "assets/sample-leads-1.webp",
+    challenge:
+      "A founder had a saved LinkedIn list and no way to work it. Titles were mixed, half the addresses were role-based guesses, and early outbound was damaging the sending domain with bounces.",
+    tools: ["Apollo.io", "LinkedIn Sales Navigator", "NeverBounce", "Google Sheets"],
+    result:
+      "500 verified decision-makers delivered at 98.4% deliverability and under a 1.5% bounce rate. The ICP filter set now rebuilds next month's list in under an hour."
+  },
+  {
+    title: "HubSpot CRM Pipeline & Outreach Sequence Tracker",
+    category: "Lead Generation",
+    key: "leads",
+    file: "assets/sample-leads-2.webp",
+    challenge:
+      "Warm conversations lived in a shared inbox and a spreadsheet. Follow-ups were missed whenever the week got busy, and nobody could say how many prospects were actually live.",
+    tools: ["HubSpot CRM", "Apollo.io", "Gmail Sequences", "Notion SOP"],
+    result:
+      "300+ warm prospects organised across five pipeline stages with lead scoring and automated task reminders — zero dropped follow-ups across 60 days, and a pipeline review that now takes one dashboard."
   }
 ];
 
