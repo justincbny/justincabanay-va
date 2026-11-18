@@ -824,7 +824,7 @@ code {
   box-shadow: 0 26px 50px -26px rgba(13, 15, 26, 0.45);
 }
 
-/* Preview surfaces */
+/* Preview surfaces — every card gets an identically sized preview */
 .preview {
   margin-top: auto;
   padding-top: 0.9rem;
@@ -834,30 +834,30 @@ code {
 .preview--social::before { content: none; }
 
 .preview--inbox,
-.preview--calendar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: auto;
-  padding: clamp(0.65rem, 1.6vw, 0.8rem);
-  border-radius: var(--radius-md);
-  background: var(--bg-cobalt);
-  overflow: hidden;
-}
-.preview--inbox { min-height: clamp(150px, 22vw, 176px); }
-.preview--calendar { min-height: clamp(150px, 22vw, 176px); }
+.preview--calendar,
 .preview--social,
 .preview--leads {
+  --preview-h: clamp(184px, 20vw, 196px);
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
   margin-top: auto;
+  height: var(--preview-h);
+  min-height: var(--preview-h);
+  max-height: var(--preview-h);
   padding: clamp(0.65rem, 1.6vw, 0.8rem);
-  border: 1px solid rgba(13, 15, 26, 0.14);
   border-radius: var(--radius-md);
-  background: var(--bg-white);
   overflow: hidden;
-  min-height: clamp(150px, 22vw, 176px);
+}
+.preview--inbox,
+.preview--calendar {
+  gap: 0.5rem;
+  background: var(--bg-cobalt);
+}
+.preview--social,
+.preview--leads {
+  border: 1px solid rgba(13, 15, 26, 0.14);
+  background: var(--bg-white);
 }
 
 .mini-bar {
@@ -900,7 +900,8 @@ code {
   grid-template-columns: 10px minmax(0, 1fr) auto;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.35rem 0.4rem;
+  min-height: 0;
+  padding: 0.3rem 0.4rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 7px;
   background: rgba(255, 255, 255, 0.08);
@@ -975,10 +976,17 @@ code {
 .dot-focus { background: var(--accent-lime); }
 .dot-meet { background: rgba(255, 255, 255, 0.4); }
 
-.mini-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.25rem; }
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.3rem;
+  flex: 1;
+  min-height: 0;
+}
 .mini-tile {
   display: block;
-  aspect-ratio: 1;
+  min-height: 0;
   border-radius: 5px;
 }
 .mini-tile--cobalt { background: var(--bg-cobalt); }
@@ -1013,14 +1021,15 @@ code {
 }
 .mini-analytics-label strong { color: var(--ink-dark); }
 
-.mini-prospects { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; }
+.mini-prospects { display: flex; flex-direction: column; gap: 0.26rem; flex: 1; min-height: 0; }
 .mini-lead {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 0.35rem;
   flex: 1;
-  padding: 0.3rem 0.4rem;
+  min-height: 0;
+  padding: 0.24rem 0.4rem;
   border: 1px solid rgba(13, 15, 26, 0.1);
   border-radius: 7px;
   background: #FBFBFE;
